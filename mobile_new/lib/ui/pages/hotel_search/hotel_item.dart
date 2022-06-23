@@ -1,5 +1,7 @@
 import 'package:mobile_new/commons/theme.dart';
 import 'package:mobile_new/model/hotel_model.dart';
+import 'package:mobile_new/screens/make_payment.dart';
+import 'package:mobile_new/screens/payment.dart';
 import 'package:mobile_new/ui/pages/hotel_detail/hotel_detail_page.dart';
 import 'package:flutter/material.dart';
 
@@ -27,9 +29,8 @@ class HotelItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image(
-                      image: AssetImage(hotel.imageUrl),
-                      
-                    ) , // Image.network(hotel.imageUrl),
+                    image: AssetImage(hotel.imageUrl),
+                  ), // Image.network(hotel.imageUrl),
                 ),
               ),
             ),
@@ -84,7 +85,12 @@ class HotelItem extends StatelessWidget {
                           angle: 25 * 3.1416 / 180,
                           child: IconButton(
                             icon: Icon(Icons.navigation),
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => MakePayment(),
+                              ),
+                            ),
                             color: Colors.white,
                           ),
                         ),

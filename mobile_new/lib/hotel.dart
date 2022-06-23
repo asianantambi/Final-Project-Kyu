@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -26,9 +28,11 @@ Future<List<dynamic>> getUsers() async {
   // });
 
   for (var i = 0; i < allData.length; i++) {
-
     var room_data;
-    room_data.add(userData[i]["roomType", ]);
+    // room_data.add(userData[i]["roomType"].toString());
+    roomType:
+    var roomType;
+    (roomType.of(context).settings.arguments as Map)["roomType"].toString();
   }
 
   Future<List> room_data;
@@ -41,7 +45,6 @@ Future<List<dynamic>> getUsers() async {
   widget._HotelItem.bookingFee = room_data;
 
   widget._HotelItem.price = room_data;
-
 
   return room_data;
 }
